@@ -8,21 +8,22 @@
 <!DOCTYPE html>
 <html>
     <head>
-		<meta name="description" content="Medical Assistant home page" />
-                <title>Hospital Information System: Medical Assistant home page</title>
-                <%@include file="/WEB-INF/jspf/common_head.jspf" %>
+        <meta name="description" content="Medical Assistant home page" />
+        <title>Hospital Information System: Medical Assistant home page</title>
+        <%@include file="/WEB-INF/jspf/common_head.jspf" %>
     </head>
     <body>
         <%@include file="/WEB-INF/jspf/header.jspf" %>
-        
+
         <div id="main-wrapper">
             <div class="container">
                 <h1 style="text-align: center; color: blue; font-size: 400%">Medical Assistant page</h1>
                 <p>Welcome to your home page</p>
+                </p>
             </div>
         </div>
-                  <%@include file="/WEB-INF/jspf/footer.jspf" %>
-      
-        
+        <%@include file="/WEB-INF/jspf/footer.jspf" %>
+
+
     </body>
 </html>

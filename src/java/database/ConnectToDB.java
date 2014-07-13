@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConnectToDB {
-    public static Connection ConnectToOracle() {
+    public static Connection ConnectToMySQL() {
         Connection c;
         try {
 

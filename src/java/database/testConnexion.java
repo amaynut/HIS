@@ -36,7 +36,7 @@ public class testConnexion extends HttpServlet {
     public ResultSet insert() {
         // 3) connect to the database
 
-        try (Connection conn = ConnectToDB.ConnectToOracle()) {
+        try (Connection conn = ConnectToDB.ConnectToMySQL()) {
             Statement statment = conn.createStatement();
             String query = "INSERT INTO pay_itempay(itempay_no,itempay_title,itempay_rate) VALUES(" + ")";                        
             return  statment.executeQuery(query);

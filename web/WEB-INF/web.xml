@@ -29,6 +29,6 @@
     </resource-ref>
     <error-page>
         <error-code>404</error-code>
-        <location>/WEB-INF/jsp/notfound.jsp</location>
+        <location>/WEB-INF/notfound.jsp</location>
     </error-page>
 </web-app>

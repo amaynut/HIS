@@ -19,6 +19,7 @@
             <div class="container">
                 <h1 style="text-align: center; color: blue; font-size: 400%">Doctor page</h1>
                 <p>Welcome to your home page</p>
+                <p></p>
             </div>
         </div>
                   <%@include file="/WEB-INF/jspf/footer.jspf" %>

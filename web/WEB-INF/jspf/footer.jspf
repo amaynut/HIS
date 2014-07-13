@@ -1,0 +1,66 @@
+	<!-- Footer -->
+<div id="footer-wrapper">
+				<footer class="container" id="site-footer">
+					<div class="row">
+						<div class="3u">
+							<section class="first">
+								<h2>Contact Information</h2>
+								<ul>
+									<li>Phone 1: +1 885 968 9658 </li>
+									<li>Phone 2: +1 854 152 9654</li>
+									<li>Fax: +1 148 458 9658</li>
+									<li>Email: contact@onlinehis.com</li>
+								</ul>
+							</section>
+						</div>
+						<div class="3u">
+							<section>
+								<h2>Location</h2>
+								<ul>
+									<li>Vanier College Hospital</li>
+									<li>4259 Freedom Street, Floor 4</li>
+									<li>H1M 4L6 Montreal (Quebec)</li>
+									<li>Canada</li>
+								</ul>
+							</section>
+						</div>
+						<div class="3u">
+							<section>
+								<h2>Get Direction</h2>
+								<ul>
+									<li>By car:</li>
+									<li>- Highway 40 East, exit 30</li>
+									<li>- Turn left Freedom Street</li>
+									<li>By public transportation:</li>
+									<li>- Metro 2, station Freedom</li>
+									<li>- or, bus 514, stop Liberty</li>
+								</ul>
+							</section>
+						</div>
+						<div class="3u">
+							<section class="last">
+								<h2>Emergency Numbers</h2>
+								<ul>
+									<li>Montreal Police: (514) 280-2222</li>
+									<li>Ambulance/ Fire/ Police: 911</li>
+									<li>Info-Crime Quebec: 1 800 711-1800</li>
+									<li>Gas/Odor Detection: (514) 598-3111</li>
+									<li>Urgence Santé: (514) 723-5600</li>
+								</ul>
+							</section>
+						</div>
+					</div>
+					<div class="row">
+						<div class="12u">
+							<div class="divider"></div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="12u">
+							<div id="copyright">
+								&copy; Saïd GUERRAB, 2014. All rights reserved. | Design: <a href="http://html5up.net">HTML5 UP</a> | Images: <a href="http://fotogrph.com">fotogrph</a>
+							</div>
+						</div>
+					</div>
+				</footer>
+			</div>

@@ -1,0 +1,5 @@
+<sql:setDataSource var="db" 
+                       url="jdbc:mysql://localhost:3306/hospital" 
+                       driver="com.mysql.jdbc.Driver"
+                       password="penpony46"
+                       user="root"/>

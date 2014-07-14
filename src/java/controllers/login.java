@@ -63,15 +63,12 @@ public class login extends HttpServlet {
                 // check the result
                 if (result.first()) {
                     // redirect to the home page of the user
-                    out.println("Connected !!!");
-                    //response.sendRedirect("/jsp/" + userType);
                     response.sendRedirect("jsp/" + userType);
                     return; // stop the for loop
                 }
 
             }
             if (!connected) {
-                out.println("<br>Not Connected !!!");
                 response.sendRedirect("login.jsp");
             }
         }

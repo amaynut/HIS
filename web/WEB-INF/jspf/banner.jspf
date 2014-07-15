@@ -4,10 +4,6 @@
     <div class="12u">
         <div id="banner">
             <a href="#"><img alt="Web site banner" src="images/Banner_Design.png" ></a>
-            <div class="caption">
-                <span><strong>HIS</strong>: A Hospital Information System</span>
-                <a href="login.jsp" class="button">Login</a>
-            </div>
         </div>
     </div>
 </div>

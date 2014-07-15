@@ -1,19 +1,15 @@
 <%-- any content can be specified here e.g.: --%>
 <% String root = request.getContextPath();%>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700" rel="stylesheet" />
-<script src="<%=root%>/js/jquery.min.js"></script>
-<script src="<%=root%>/js/config.js"></script>
-<script src="<%=root%>/js/skel.min.js"></script>
-<script src="<%=root%>/js/skel-panels.min.js"></script>
-<%-- Bootstrap --%>
-<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
-<%-- Style for noscript clients --%>
-<noscript>
-<link rel="stylesheet" href="<%=root%>/css/skel-noscript.css" />
-<link rel="stylesheet" href="<%=root%>/css/style.css" />
-<link rel="stylesheet" href="<%=root%>/css/style-desktop.css" />
-</noscript>
-<!--[if lte IE 9]><link rel="stylesheet" href="css/style-ie9.css" /><![endif]-->
-<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+ <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript" src="<%=root%>/js/jquery.min.js"></script>
+
+        <script type="text/javascript" src="<%=root%>/bootstrap/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="<%=root%>/css/bootstrap.min.css" />
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script>
+          <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <title>JSP Page</title>
+    </head>

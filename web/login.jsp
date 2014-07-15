@@ -9,13 +9,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <style type="text/css">
-
-            .exampleInputEmail1{
-                border-radius:0px;
-            }
-
-        </style>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta name="description" content="" />
         <title>Hospital Information System: HOME PAGE</title>

@@ -13,7 +13,7 @@
         <%@include file="WEB-INF/jspf/common_head.jspf" %>  
         <style>
             .jumbotron {
-                background: #358CCE;
+                background: #0D747C;
                 color: #FFF;
                 border-radius: 0px;
             }

@@ -13,7 +13,6 @@
         <%@include file="/WEB-INF/jspf/common_head.jspf" %>
     </head>
     <body>
-        <%@include file="/WEB-INF/jspf/header.jspf" %>
 
         <div id="main-wrapper">
             <div class="container">

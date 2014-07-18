@@ -2,15 +2,11 @@
         <style>
             .img_footer { width: 6em;}
             .location {height: 7em; width: 5em;}
-
-            hr { color: #7FA423;
-                 background-color: white;
-                 height: 2px;
-                 width: 95%;
+            #footer {
+                background-color: #911821;
             }
 
         </style>
-        <hr>
         <div id="footer">
             <div class="container">
                 <div class="row">

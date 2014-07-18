@@ -8,9 +8,25 @@
         <servlet-name>testConnexion</servlet-name>
         <servlet-class>database.testConnexion</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Url</servlet-name>
+        <servlet-class>controllers.Url</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>testBean</servlet-name>
+        <servlet-class>controllers.testBean</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>connect</servlet-name>
         <url-pattern>/connect</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Url</servlet-name>
+        <url-pattern>/Url</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>testBean</servlet-name>
+        <url-pattern>/testBean</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

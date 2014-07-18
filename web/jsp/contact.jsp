@@ -10,7 +10,7 @@
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta name="description" content="" />
         <title>Hospital Information System: HOME PAGE</title>
-        <%@include file="WEB-INF/jspf/common_head.jspf" %>  
+        <%@include file="../WEB-INF/jspf/common_head.jspf" %>  
         <style>
             .jumbotron {
                 background: #0D747C;
@@ -28,7 +28,7 @@
         </style>
     </head>
     <body>
-        <%@include file="WEB-INF/jspf/header.jspf" %>
+        <%@include file="../WEB-INF/jspf/header.jspf" %>
 
         <div id="main-wrapper">
             <div class="jumbotron jumbotron-sm">
@@ -112,7 +112,7 @@
             </div>
 
         </div>
-        <%@include file="WEB-INF/jspf/footer.jspf" %>
+        <%@include file="../WEB-INF/jspf/footer.jspf" %>
 
 
     </body>

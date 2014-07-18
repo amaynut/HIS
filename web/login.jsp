@@ -11,7 +11,7 @@
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta name="description" content="" />
-        <title>Hospital Information System: HOME PAGE</title>
+        <title>Hospital Information System: Login PAGE</title>
        
         <%@include file="WEB-INF/jspf/common_head.jspf" %>
          <script type="text/javascript">
@@ -28,8 +28,6 @@
         </script>
     </head>
     <body>
-        <%@include file="WEB-INF/jspf/header.jspf" %>
-
         <div id="main-wrapper">
             <div class="container">
                 <div class="row">

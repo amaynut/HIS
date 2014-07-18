@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package controllers;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,8 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Said
  */
-@WebServlet(name = "controller", urlPatterns = {"/controller"})
-public class controller extends HttpServlet {
+public class Url extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,34 +32,28 @@ public class controller extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet controller</title>");
-            out.println("</head>");
-            out.println("<body>");
-
-            String action = request.getParameter("action");
-
-            if (action == null) {
-                request.getRequestDispatcher("/login.jsp").forward(request, response);
-            } else {
-                String name = request.getParameter("Name");
-                String password = request.getParameter("Password");
-
-                if (name.equals("said") && password.equals("azerty")) {
-                    request.getRequestDispatcher("/success.jsp").forward(request, response);
-                } else {
-                    request.setAttribute("result", "You password and user names are not valid !");
-                    request.getRequestDispatcher("/login.jsp").forward(request, response);
-
-                }
+           // this servlet will redirect URLs to the corresponding JSP
+            String page =   request.getParameter("page");
+            String context = request.getContextPath();
+             if(page !=null) {
+            switch(page){
+                case "home":
+                    response.sendRedirect(context+"/jsp/home.jsp");
+                    break;
+                case "profile":
+                    response.sendRedirect(context+"/jsp/profile.jsp");
+                    break;
+                case "contact":
+                    response.sendRedirect(context+"/jsp/contact.jsp");
+                    break;
+                default:
+                    response.sendRedirect(context+"/WEB-INF/notfound.jsp");
             }
-
-            out.println("<h1>Servlet controller at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+             }
+             else {
+                   response.sendRedirect(context+"/WEB-INF/notfound.jsp");
+             }
+           
         }
     }
 

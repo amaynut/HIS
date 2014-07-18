@@ -20,6 +20,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import beans.*;
 
 /**
  *
@@ -55,15 +56,35 @@ public class login extends HttpServlet {
             boolean connected = false;
             // excute the statment in a loop of all users type
             for (String userType : userTypeList) {
-                String query = "SELECT email, password FROM " + "hospital." + userType
+                String query = "SELECT * FROM " + "hospital." + userType
                         + " WHERE email='" + email + "'"
                         + "AND password='" + password + "'";
                 ResultSet result = statment.executeQuery(query);
 
                 // check the result
                 if (result.first()) {
+                    // set the user bean
+                    user currentUser = new user();
+                    currentUser.setFirstName(result.getString("FirstName"));
+                    currentUser.setLastName(result.getString("LastName"));
+                    currentUser.setEmail(result.getString("email"));
+                    currentUser.setPassword(result.getString("password"));
+                    currentUser.setPhone(result.getString("phone"));
+                    currentUser.setBirthday(result.getString("DateOfBirth"));
+                    currentUser.setStreet(result.getString("street"));
+                    currentUser.setCity(result.getString("City"));
+                    currentUser.setZipCode(result.getString("ZipCode"));
+                    currentUser.setState(result.getString("State"));
+                    currentUser.setCountry(result.getString("Country"));                  
+                    currentUser.setType(userType);
+                    currentUser.setLogedIn(true);
+
+                    // store bean in session
+                    request.getSession().setAttribute("user", currentUser);
+                    //request.getSession().setAttribute("user", currentUser);
+
                     // redirect to the home page of the user
-                    response.sendRedirect("jsp/" + userType);
+                    response.sendRedirect("jsp/home.jsp");
                     return; // stop the for loop
                 }
 

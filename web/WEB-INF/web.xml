@@ -13,8 +13,8 @@
         <servlet-class>controllers.Url</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>testBean</servlet-name>
-        <servlet-class>controllers.testBean</servlet-class>
+        <servlet-name>update_profile</servlet-name>
+        <servlet-class>controllers.update_profile</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>connect</servlet-name>
@@ -25,8 +25,8 @@
         <url-pattern>/Url</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>testBean</servlet-name>
-        <url-pattern>/testBean</url-pattern>
+        <servlet-name>update_profile</servlet-name>
+        <url-pattern>/update_profile</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

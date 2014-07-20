@@ -1,32 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
-        <servlet-name>connect</servlet-name>
-        <servlet-class>database.connect</servlet-class>
+        <description>Site Contact Form</description>
+        <servlet-name>contact</servlet-name>
+        <jsp-file>/jsp/contact.jsp</jsp-file>
     </servlet>
     <servlet>
-        <servlet-name>testConnexion</servlet-name>
-        <servlet-class>database.testConnexion</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>Url</servlet-name>
-        <servlet-class>controllers.Url</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>update_profile</servlet-name>
-        <servlet-class>controllers.update_profile</servlet-class>
+        <servlet-name>SendEmail</servlet-name>
+        <servlet-class>controllers.SendEmail</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>connect</servlet-name>
-        <url-pattern>/connect</url-pattern>
+        <servlet-name>contact</servlet-name>
+        <url-pattern>/contact</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>Url</servlet-name>
-        <url-pattern>/Url</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>update_profile</servlet-name>
-        <url-pattern>/update_profile</url-pattern>
+        <servlet-name>SendEmail</servlet-name>
+        <url-pattern>/SendEmail</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

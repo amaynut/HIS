@@ -26,6 +26,27 @@
                 font-size: 24px;
             }
         </style>
+        <script>
+            $(document).ready(function() {
+
+                // send the form to the controller through Ajax call
+                var form = $('#form-contact');
+                form.submit(function() {
+
+                    $.ajax({
+                        type: form.attr('method'),
+                        url: form.attr('action'),
+                        data: form.serialize(),
+                        success: function(data) {
+                            $('#result').html(data);
+                            $('#result').attr("class", "alert alert-success");
+                        }
+                    });
+
+                    return false;
+                });
+            });
+        </script>
     </head>
     <body>
         <%@include file="../WEB-INF/jspf/header.jspf" %>
@@ -45,7 +66,7 @@
                 <div class="row">
                     <div class="col-md-8">
                         <div class="well well-sm">
-                            <form>
+                            <form action="${pageContext.servletContext.contextPath}/SendEmail" method="post" id="form-contact">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -59,7 +80,7 @@
                                             <div class="input-group">
                                                 <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
                                                 </span>
-                                                <input type="email" class="form-control" id="email" placeholder="Enter email" required="required" /></div>
+                                                <input type="email" class="form-control" id="email" name="from" placeholder="Enter email" required="required" /></div>
                                         </div>
                                         <div class="form-group">
                                             <label for="subject">
@@ -84,15 +105,18 @@
                                         <button type="submit" class="btn btn-primary pull-right" id="btnContactUs">
                                             Send Message</button>
                                     </div>
+
                                 </div>
                             </form>
+                            <%-- Ajax Message for update will display here --%>
+                            <div  role="alert" id="result"> </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <form>
                             <legend><span class="glyphicon glyphicon-globe"></span> Our office</legend>
                             <address>
-                                
+
                                 <strong>Vanier College Hospital</strong><br>
                                 4259 Freedom Street, Floor 4<br>
                                 H1M 4L6 Montreal (Quebec)<br>

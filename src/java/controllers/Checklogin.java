@@ -27,7 +27,7 @@ import beans.*;
  * @author Said
  */
 @WebServlet(name = "login", urlPatterns = {"/login"})
-public class login extends HttpServlet {
+public class Checklogin extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -46,7 +46,7 @@ public class login extends HttpServlet {
 
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            // get the login paramaters
+            // get the Checklogin paramaters
             String email = request.getParameter("email");
             String password = request.getParameter("password");
             // the list of users type
@@ -110,7 +110,7 @@ public class login extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Checklogin.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -128,7 +128,7 @@ public class login extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Checklogin.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

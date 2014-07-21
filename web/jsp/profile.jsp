@@ -29,9 +29,8 @@
                 for (var i = 0; i < inputFields.length; i++) {
                     inputFields[i].disabled = false;
                 }
-                document.getElementById("Edit").innerHTML = "Save";
+                document.getElementById("Edit").display = "NONE";
                 document.getElementById("save").type = "submit";
-
             }
         </script>
         <script type="text/javascript">

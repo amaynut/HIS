@@ -9,12 +9,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta name="description" content="" />
-        <title>Hospital Information System: Login PAGE</title>
-       
+        <title>Hospital Information System: Login PAGE</title>       
         <%@include file="WEB-INF/jspf/common_head.jspf" %>
-         <script type="text/javascript">
+        <script type="text/javascript">
             $(document).ready(function() {
                 $('#olvidado').click(function(e) {
                     e.preventDefault();
@@ -31,15 +29,17 @@
         <div id="main-wrapper">
             <div class="container">
                 <div class="row">
+                    <%-- Ajax Message for update will display here --%>
 
                     <div class="col-md-6 col-md-offset-3">
+                        <div  role="alert" id="result"> </div>
                         <h4 style="border-bottom: 1px solid #c5c5c5;">
                             <i class="glyphicon glyphicon-user">
                             </i>
                             Account Access
                         </h4>
                         <div style="padding: 20px;" id="form-olvidado">
-                            <form accept-charset="UTF-8" role="form" id="login-form" method="get" action="login">
+                            <form accept-charset="UTF-8" role="form" id="login-form" method="post" action="${pageContext.servletContext.contextPath}/Checklogin">
                                 <fieldset>
                                     <div class="form-group input-group">
                                         <span class="input-group-addon">
@@ -90,6 +90,7 @@
                                     </p>
                                 </fieldset>
                             </form>
+
                         </div>
                     </div>
                 </div>

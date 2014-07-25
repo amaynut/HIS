@@ -31,6 +31,9 @@ public class UserAuthFilter implements Filter {
         String url = request.getServletPath();
         boolean allowedRequest = false;
         String strURL = "";
+        response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+        response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+        response.setDateHeader("Expires", 0); // Proxies.
 
         // To check if the url can be excluded or not
         for (int i = 0; i < urlList.size(); i++) {
@@ -44,7 +47,7 @@ public class UserAuthFilter implements Filter {
             HttpSession session = request.getSession(false);
             if (session == null || session.getAttribute("user") == null) {
                 // Forward the control to login.jsp if authentication fails
-                response.sendRedirect(request.getContextPath()+"/login.jsp");
+                response.sendRedirect(request.getContextPath() + "/login.jsp");
                 return;
             }
         }

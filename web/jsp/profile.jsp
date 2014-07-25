@@ -16,21 +16,37 @@
         <link href="../BootStrapFormValidator/css/bootstrapValidator.min.css" rel="stylesheet" type="text/css"/>
         <script src="../BootStrapFormValidator/js/bootstrapValidator.min.js" type="text/javascript"></script>
         <script type="text/javascript">
-
-            var inputFields = document.getElementsByTagName("input");
+            var hidden = true;
+            window.onload = function() {
+                BTN_edit = document.getElementById("Edit");
+                BTN_save = document.getElementById("save");
+                inputFields = document.getElementsByTagName("input");
+                setReadOnly();             
+                // attach event to the buttons
+                BTN_edit.onclick = makeEditable;
+                document.getElementsByName("body").onload= hideButton;
+            };
             function setReadOnly() {
-
                 for (var i = 0; i < inputFields.length; i++) {
                     inputFields[i].disabled = true;
                 }
             }
             function makeEditable() {
-
                 for (var i = 0; i < inputFields.length; i++) {
                     inputFields[i].disabled = false;
                 }
-                document.getElementById("Edit").display = "NONE";
-                document.getElementById("save").type = "submit";
+                BTN_save.type = "submit";
+                hideButton();
+            }  
+            function hideButton() {
+                if (!hidden) {
+                    BTN_save.style.visibility = 'hidden';
+                    hidden = true;
+                } else {
+                    BTN_save.style.visibility = 'visible';
+                    BTN_save.disabled = false;
+                    hidden = false;
+                }
             }
         </script>
         <script type="text/javascript">
@@ -106,7 +122,7 @@
             });
         </script>
     </head>
-    <body onload="setReadOnly()">
+    <body>
         <%@include file="/WEB-INF/jspf/header.jspf" %>
 
         <div id="main-wrapper">
@@ -170,7 +186,7 @@
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="phone">Date of birth</label>  
                             <div class="col-md-3">
-                                <input id="birthday" value="${user.birthday}" name="birthday" type="text" placeholder="Your birthday" class="form-control input-md">
+                                <input id="birthday" value="${user.birthday}" name="birthday" data-type="combodate" placeholder="Your birthday" class="form-control input-md">
                                 <span class="help-block">Format: YYYY-MM-DD</span>  
                             </div>
                         </div>
@@ -235,12 +251,10 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="Edit"></label>
                         <div class="col-md-4">
-                            <a id="Edit" name="Edit" style="width:10em;" class="btn btn-primary" onclick="makeEditable()" >Edit</a>
-                            <button id="save" name="Save" style="width:10em;" class="btn btn-primary" >Save</button>
+                            <a id="Edit" name="Edit" style="width:10em;" class="btn btn-primary" >Edit</a>
+                            <button id="save" name="Save" style="width:10em; visibility:hidden" class="btn btn-primary" >Save</button>
                         </div>
                     </div>
-
-
                 </form>
                 <%-- Ajax Message for update will display here --%>
                 <div  role="alert" id="result"> </div>

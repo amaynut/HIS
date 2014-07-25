@@ -1,13 +1,16 @@
 <%-- any content can be specified here e.g.: --%>
 <% String root = request.getContextPath();%>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <script type="text/javascript" src="<%=root%>/js/jquery.min.js"></script>
-        <script type="text/javascript" src="<%=root%>/bootstrap/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="<%=root%>/css/bootstrap.min.css" />
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-          <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script>
-          <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="<%=root%>/js/jquery.min.js"></script>
+<script type="text/javascript" src="<%=root%>/bootstrap/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="<%=root%>/css/bootstrap.min.css" />
+<link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
+<script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+<link rel="stylesheet" href="<%=root%>/css/style.css" />
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
 
 

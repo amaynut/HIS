@@ -23,6 +23,16 @@ public class user implements java.io.Serializable{
    private String email;
    private String password;
    private String type;
+   private String picture;
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
+    }
+   private String gender;
    private boolean logedIn;
 
     public user() {
@@ -137,4 +147,15 @@ public class user implements java.io.Serializable{
     public void setCountry(String country) {
         this.country = country;
     }   
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+    
+    
+    
 }

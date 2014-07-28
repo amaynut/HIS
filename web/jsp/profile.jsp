@@ -3,9 +3,6 @@
     Created on : Jul 11, 2014, 2:51:28 AM
     Author     : Said GUERRAB
 --%>
-
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,122 +12,17 @@
         <script src="../js/jquery.maskedinput.js" type="text/javascript"></script>
         <link href="../BootStrapFormValidator/css/bootstrapValidator.min.css" rel="stylesheet" type="text/css"/>
         <script src="../BootStrapFormValidator/js/bootstrapValidator.min.js" type="text/javascript"></script>
-        <script type="text/javascript">
-            var hidden = true;
-            window.onload = function() {
-                BTN_edit = document.getElementById("Edit");
-                BTN_save = document.getElementById("save");
-                inputFields = document.getElementsByTagName("input");
-                setReadOnly();             
-                // attach event to the buttons
-                BTN_edit.onclick = makeEditable;
-                document.getElementsByName("body").onload= hideButton;
-            };
-            function setReadOnly() {
-                for (var i = 0; i < inputFields.length; i++) {
-                    inputFields[i].disabled = true;
-                }
-            }
-            function makeEditable() {
-                for (var i = 0; i < inputFields.length; i++) {
-                    inputFields[i].disabled = false;
-                }
-                BTN_save.type = "submit";
-                hideButton();
-            }  
-            function hideButton() {
-                if (!hidden) {
-                    BTN_save.style.visibility = 'hidden';
-                    hidden = true;
-                } else {
-                    BTN_save.style.visibility = 'visible';
-                    BTN_save.disabled = false;
-                    hidden = false;
-                }
-            }
-        </script>
-        <script type="text/javascript">
-            jQuery(function($) {
-                $("#DateOfBirth").mask("9999-99-99");
-                $("#phone").mask("(999) 999-9999");
-                $("#zipCode").mask("a9a-a9a");
-                $("#state").mask("aa");
-            });
-        </script>
-        <script>
-            $(document).ready(function() {
-                $('#form-profile').bootstrapValidator({
-                    message: 'This value is not valid',
-                    feedbackIcons: {
-                        valid: 'glyphicon glyphicon-ok',
-                        invalid: 'glyphicon glyphicon-remove',
-                        validating: 'glyphicon glyphicon-refresh'
-                    },
-                    fields: {
-                        birthday: {
-                            validators: {
-                                date: {
-                                    format: 'YYYY-MM-DD',
-                                    message: 'The value is not a valid date'
-                                }
-                            }
-                        },
-                        email: {
-                            validators: {
-                                notEmpty: {
-                                    message: 'The email is required and cannot be empty'
-                                },
-                                emailAddress: {
-                                    message: 'The input is not a valid email address'
-                                }
-                            }
-                        },
-                        password: {
-                            validators: {
-                                identical: {
-                                    field: 'confirmPassword',
-                                    message: 'The password and its confirm are not the same'
-                                }
-                            }
-                        },
-                        confirmPassword: {
-                            validators: {
-                                identical: {
-                                    field: 'password',
-                                    message: 'The password and its confirm are not the same'
-                                }
-                            }
-                        }
-                    }
-                });
-                // send the form to the controller through Ajax call
-                var form = $('#form-profile');
-                form.submit(function() {
-
-                    $.ajax({
-                        type: form.attr('method'),
-                        url: form.attr('action'),
-                        data: form.serialize(),
-                        success: function(data) {
-                            $('#result').html(data);
-                            $('#result').attr("class", "alert alert-success");
-                        }
-                    });
-
-                    return false;
-                });
-            });
-        </script>
+        <script type="text/javascript" src="<%=root%>/js/EditProfile.js"></script>
     </head>
     <body>
         <%@include file="/WEB-INF/jspf/header.jspf" %>
-
+            
         <div id="main-wrapper">
             <div class="container">
                 <h1 style='text-align: center'>My Profile</h1>
                 <!-- Profile Picture -->
                 <div class="col-xs-10 col-sm-3 text-center">
-                    <img src="http://api.randomuser.me/portraits/women/50.jpg" alt="profile picture" class="center-block img-circle img-responsive">
+                    <img src="${user.picture}" alt="profile picture" class="center-block img-circle img-responsive">
                 </div>
                 <form class="form-horizontal" id="form-profile" method="post" action="/NewHIS/update_profile">
                     <fieldset> 
@@ -160,7 +52,7 @@
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="email" >Email</label>  
                             <div class="col-md-4">
-                                <input id="email" name="email" readonly="" value="${user.email}" type="text" placeholder="Email address" class="form-control input-md" required="">
+                                <input id="email" name="email" readonly="" value="${user.email}" type="email" placeholder="Email address" class="form-control input-md" required="">
 
                             </div>
                         </div>
@@ -251,8 +143,10 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="Edit"></label>
                         <div class="col-md-4">
-                            <a id="Edit" name="Edit" style="width:10em;" class="btn btn-primary" >Edit</a>
-                            <button id="save" name="Save" style="width:10em; visibility:hidden" class="btn btn-primary" >Save</button>
+                            <a id="Edit" name="Edit" style="width:10em;" class="btn btn-primary" >
+                                <span class="glyphicon glyphicon-edit"></span> &nbsp; &nbsp;Edit</a>
+                            <button id="save" name="Save" style="width:10em; visibility:hidden" class="btn btn-primary" >
+                                 <span class="glyphicon glyphicon-save"></span> &nbsp; &nbsp;Save</button>
                         </div>
                     </div>
                 </form>

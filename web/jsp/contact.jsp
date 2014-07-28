@@ -3,7 +3,6 @@
     Created on : 10-Jun-2014, 12:25:35 PM
     Author     : ContEd Student
 --%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -49,8 +48,14 @@
         </script>
     </head>
     <body>
-        <%@include file="../WEB-INF/jspf/header.jspf" %>
-
+        <c:choose >
+            <c:when test="${user.isLogedIn()}">
+                 <%@include file="../WEB-INF/jspf/header.jspf" %>
+            </c:when> 
+            <c:otherwise>
+                <%@include file="../WEB-INF/jspf/non_authentified_user_menu.jspf" %>
+            </c:otherwise>
+        </c:choose>
         <div id="main-wrapper">
             <div class="jumbotron jumbotron-sm">
                 <div class="container">

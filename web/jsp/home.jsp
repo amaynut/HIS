@@ -11,23 +11,7 @@
         <meta name="description" content="Medical Officer home page" />
         <title>Hospital Information System: Medical Officer home page</title>
         <%@include file="/WEB-INF/jspf/common_head.jspf" %>
-        <script type="text/javascript">
-            var today = new Date();
-            function showDate() {
-                document.getElementById("today").innerHTML =  today.toLocaleDateString();             
-            }
-            window.onload = showDate;
-            var myVar = setInterval(function() {
-                myTimer();
-            }, 1000);
-
-            function myTimer() {
-                var d = new Date();
-                var t = d.toLocaleTimeString();
-                document.getElementById("time").innerHTML = t;
-            }
-        </script>
-
+        <script src="<%=root%>/js/ShowDateTime.js" type="text/javascript"></script>
     </head>
     <body>
         <%@include file="/WEB-INF/jspf/header.jspf" %>       

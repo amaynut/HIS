@@ -45,7 +45,6 @@ public class Checklogin extends HttpServlet {
         Connection conn = ConnectToDB.ConnectToMySQL();
 
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
             // get the Checklogin paramaters
             String email = request.getParameter("email");
             String password = request.getParameter("password");
@@ -77,11 +76,10 @@ public class Checklogin extends HttpServlet {
                     currentUser.setState(result.getString("State"));
                     currentUser.setCountry(result.getString("Country"));                  
                     currentUser.setType(userType);
+                    currentUser.setPicture(result.getString("picture"));
                     currentUser.setLogedIn(true);
-
                     // store bean in session
                     request.getSession().setAttribute("user", currentUser);
-                    //request.getSession().setAttribute("user", currentUser);
 
                     // redirect to the home page of the user
                     response.sendRedirect("jsp/home.jsp");

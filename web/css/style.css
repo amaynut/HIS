@@ -10,9 +10,13 @@ legend {
   color: #e8747c;
 }
 h3,
-label {
+label,
+th {
   color: #ef9fa5;
 }
 h4 {
   color: #f3b5ba;
+}
+.has-error {
+  color: red;
 }

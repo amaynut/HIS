@@ -7,7 +7,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta name="description" content="" />
         <title>Hospital Information System: HOME PAGE</title>
         <%@include file="/WEB-INF/jspf/common_head.jspf" %>
@@ -15,7 +14,9 @@
     <body>
 
         <div id="main-wrapper">
+            <%@include file="/WEB-INF/jspf/non_authentified_user_menu.jspf" %>
             <div class="container">
+
                 <%@include file="/WEB-INF/jspf/banner.jspf" %>
 
             </div>
@@ -25,7 +26,8 @@
                         <div class="col-sm-12 col-lg-12">
                             <h1 class="h1">
                                 Welcome to the Online HIS 
-                                <a class="btn btn-primary btn-lg" href="login.jsp"> Sign In</a>
+                                <a class="btn btn-primary btn-lg" href="login.jsp"> 
+                                    <span class="glyphicon glyphicon-log-in"></span>&nbsp;&nbsp; Sign In</a>
                             </h1>
                         </div>
                     </div>

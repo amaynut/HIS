@@ -1,11 +1,19 @@
 <%-- any content can be specified here e.g.: --%>
 <% String root = request.getContextPath();%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript" src="<%=root%>/js/jquery.min.js"></script>
 <script type="text/javascript" src="<%=root%>/bootstrap/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="<%=root%>/css/bootstrap.min.css" />
-<link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
-<script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+<script src="<%=root%>/js/jquery.maskedinput.js" type="text/javascript"></script>
+<link href="<%=root%>/BootStrapFormValidator/css/bootstrapValidator.min.css" rel="stylesheet" type="text/css"/>
+<script src="<%=root%>/BootStrapFormValidator/js/bootstrapValidator.min.js" type="text/javascript"></script>
+<script src="<%=root%>/js/jquery-ui.min.js" type="text/javascript"></script>
+<link href="<%=root%>/css/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
+<link href="<%=root%>/css/jquery-ui.structure.min.css" rel="stylesheet" type="text/css"/>
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
+<link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.min.css" rel="stylesheet" type="text/css"/> 
 <link rel="stylesheet" href="<%=root%>/css/style.css" />
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>

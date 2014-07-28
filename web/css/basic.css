@@ -1,0 +1,20 @@
+@CHARSET "UTF-8";
+
+body {
+	margin: 0 auto;
+        width: 50%;
+}
+
+.message {
+    border: white dashed 2px;
+    padding: 1em;
+    display: none;
+}
+.error {
+    color: white;
+    background-color: red;
+}
+.success {
+    color: white;
+    background-color: green;
+}

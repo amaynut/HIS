@@ -6,6 +6,7 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -27,10 +28,11 @@
     </head>
     <body>
         <div id="main-wrapper">
+              <%@include file="/WEB-INF/jspf/non_authentified_user_menu.jspf" %>
             <div class="container">
+                
                 <div class="row">
-                    <%-- Ajax Message for update will display here --%>
-
+                 
                     <div class="col-md-6 col-md-offset-3">
                         <div  role="alert" id="result"> </div>
                         <h4 style="border-bottom: 1px solid #c5c5c5;">

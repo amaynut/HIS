@@ -6,6 +6,7 @@ import java.util.StringTokenizer;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -47,7 +48,11 @@ public class UserAuthFilter implements Filter {
             HttpSession session = request.getSession(false);
             if (session == null || session.getAttribute("user") == null) {
                 // Forward the control to login.jsp if authentication fails
-                response.sendRedirect(request.getContextPath() + "/login.jsp");
+                // add the requested page as attribute
+                request.setAttribute("requestedPage", url);
+                RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/login.jsp");
+                dispatcher.forward(request,response);          
+               // response.sendRedirect(request.getContextPath() + );
                 return;
             }
         }

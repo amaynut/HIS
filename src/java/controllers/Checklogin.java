@@ -74,16 +74,25 @@ public class Checklogin extends HttpServlet {
                     currentUser.setCity(result.getString("City"));
                     currentUser.setZipCode(result.getString("ZipCode"));
                     currentUser.setState(result.getString("State"));
-                    currentUser.setCountry(result.getString("Country"));                  
+                    currentUser.setCountry(result.getString("Country"));
                     currentUser.setType(userType);
                     currentUser.setPicture(result.getString("picture"));
                     currentUser.setLogedIn(true);
                     // store bean in session
                     request.getSession().setAttribute("user", currentUser);
+                    // get the requested page if any
+                    String url = (String) request.getAttribute("requestedPage");
 
-                    // redirect to the home page of the user
-                    response.sendRedirect("jsp/home.jsp");
-                    return; // stop the for loop
+                    if (url != null) {
+                        // redirect to the requested page after authentification
+                        response.sendRedirect("url");
+                        return; // stop the for loop
+
+                    } else { // redirect to the home page
+                        response.sendRedirect("jsp/home.jsp");
+                        return; // stop the for loop
+                    }
+
                 }
 
             }

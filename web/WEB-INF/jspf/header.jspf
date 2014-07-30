@@ -1,4 +1,5 @@
 <!-- Header -->
+<% String rootpath = request.getContextPath();%>
  <nav class="navbar navbar-default" role="navigation">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -14,14 +15,18 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li id="home"><a href="${pageContext.servletContext.contextPath}/url?page=home"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;Home</a></li>
-                        <li id="profile"><a href="${pageContext.servletContext.contextPath}/url?page=profile" title="${user.firstName} ${user.lastName}"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;Profile</a></li>
-                        <li id="contact"><a href="${pageContext.servletContext.contextPath}/url?page=contact"><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;Contact Us</a></li>
+                        <li id="home"><a href="<%=rootpath%>/url?page=home">
+                                <span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;Home</a></li>
+                        <li id="profile"><a href="<%=rootpath%>/url?page=profile" title="${user.firstName} ${user.lastName}">
+                                <span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;Profile</a></li>
+                        <li id="contact"><a href="<%=rootpath%>/url?page=contact">
+                                <span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;Contact Us</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-tasks"></span>&nbsp;&nbsp;User Menu <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="${pageContext.servletContext.contextPath}/jsp/add-user.jsp">Add a new user</a></li>
+                                <li><a href="<%=rootpath%>/jsp/add-user.jsp">Add a new user</a></li>
                                 <li><a href="#">Update a user profile</a></li>
+                                <li><a href="<%=rootpath%>/jsp/add-drug.jsp">Add a drug</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -34,7 +39,7 @@
                     </form>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="profile.jsp" title="${user.firstName} ${user.lastName}">Signed as: <span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;${user.type}</a></li>                     
-                        <li><a href="${pageContext.servletContext.contextPath}/logout"> <span class="glyphicon glyphicon-log-out"></span>&nbsp;&nbsp;Log out</a></li>
+                        <li><a href="<%=rootpath%>/logout"> <span class="glyphicon glyphicon-log-out"></span>&nbsp;&nbsp;Log out</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->

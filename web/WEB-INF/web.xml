@@ -54,6 +54,10 @@
         <servlet-name>checkPrimaryKey</servlet-name>
         <servlet-class>controllers.checkPrimaryKey</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddDrug</servlet-name>
+        <servlet-class>controllers.AddDrug</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>contact</servlet-name>
         <url-pattern>/contact</url-pattern>
@@ -89,6 +93,10 @@
     <servlet-mapping>
         <servlet-name>checkPrimaryKey</servlet-name>
         <url-pattern>/checkPrimaryKey</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddDrug</servlet-name>
+        <url-pattern>/AddDrug</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

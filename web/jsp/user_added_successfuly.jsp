@@ -12,6 +12,13 @@
         <title>Hospital Information System</title>
         <%@include file="/WEB-INF/jspf/common_head.jspf" %>
         <script src="<%=root%>/js/ShowDateTime.js" type="text/javascript"></script>
+        <script>
+            /*
+            $(document).ready(function() {
+                $('table').dataTable();
+            });
+            */
+        </script>
     </head>
     <body>
         <%@include file="/WEB-INF/jspf/header.jspf" %>       
@@ -23,18 +30,18 @@
                     <div class="alert alert-success">
                         <p>The new user was added successfully to the system.</p>
                     </div>
-                    <% 
-                    String UserType = (String) session.getAttribute("type");
-                    switch(UserType){
-                        case "MedicalOfficer":
-                                UserType= "Medical Officer";
-                            break;
-                        case "MedicalAssistant":
-                                UserType= "Medical Assistant";
-                            break;
-                        default:
-                                UserType= UserType;                        
-                    }
+                    <%
+                        String UserType = (String) session.getAttribute("type");
+                        switch (UserType) {
+                            case "MedicalOfficer":
+                                UserType = "Medical Officer";
+                                break;
+                            case "MedicalAssistant":
+                                UserType = "Medical Assistant";
+                                break;
+                            default:
+                                UserType = UserType;
+                        }
                     %>
                     <table class="table table-striped table-bordered table-hover table-responsive">
                         <tr><th>User Type: </th><td><%=UserType%></td></tr>

@@ -31,14 +31,12 @@ public class UserAuthFilter implements Filter {
         HttpServletResponse response = (HttpServletResponse) res;
         String url = request.getServletPath();
         boolean allowedRequest = false;
-        String strURL = "";
+        String strURL;
         response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
         response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
         response.setDateHeader("Expires", 0); // Proxies.
-
-        // To check if the url can be excluded or not
-        for (int i = 0; i < urlList.size(); i++) {
-            strURL = urlList.get(i).toString();
+        for (Object urlList1 : urlList) {
+            strURL = urlList1.toString();
             if (url.startsWith(strURL)) {
                 allowedRequest = true;
             }
@@ -48,7 +46,7 @@ public class UserAuthFilter implements Filter {
             HttpSession session = request.getSession(false);
             if (session == null || session.getAttribute("user") == null) {
                 // Forward the control to login.jsp if authentication fails
-                // add the requested page as attribute
+                // add the requested page as attribute            
                 request.setAttribute("requestedPage", url);
                 RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/login.jsp");
                 dispatcher.forward(request,response);          

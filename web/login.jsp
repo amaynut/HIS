@@ -41,12 +41,13 @@
                             Account Access
                         </h4>
                         <div style="padding: 20px;" id="form-olvidado">
-                            <form accept-charset="UTF-8" role="form" id="login-form" method="post" action="${pageContext.servletContext.contextPath}/Checklogin">
+                            <form accept-charset="UTF-8" role="form" id="login-form" method="post" action="<%=root%>/Checklogin">
                                 <fieldset>
                                     <div class="form-group input-group">
                                         <span class="input-group-addon">
                                             @
                                         </span>
+                                        <input type="hidden" value="${pageContext.request.requestURL}" name="requestedPage"/>
                                         <input class="form-control" placeholder="Email" name="email" type="email" required="" autofocus="">
                                     </div>
                                     <div class="form-group input-group">

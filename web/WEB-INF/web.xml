@@ -58,6 +58,10 @@
         <servlet-name>AddDrug</servlet-name>
         <servlet-class>controllers.AddDrug</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddPrescription</servlet-name>
+        <servlet-class>controllers.AddPrescription</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>contact</servlet-name>
         <url-pattern>/contact</url-pattern>
@@ -97,6 +101,10 @@
     <servlet-mapping>
         <servlet-name>AddDrug</servlet-name>
         <url-pattern>/AddDrug</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddPrescription</servlet-name>
+        <url-pattern>/AddPrescription</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

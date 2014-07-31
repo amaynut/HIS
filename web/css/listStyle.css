@@ -1,0 +1,32 @@
+/*
+The style for the list builder
+*/
+/* 
+    Created on : Jul 30, 2014, 4:36:09 PM
+    Author     : Said
+*/
+
+#addForm {
+    display:block;
+    margin:10px auto 10px auto;
+    height:20px;
+    width:200px;
+}
+.checkcheckcheck {
+    display:inline-block;
+}
+.item-field {
+    display:inline-block;
+}
+.strike {
+    text-decoration:line-through;
+}
+button {
+    margin-bottom:20px;
+    margin-top:20px;
+    font-family: Gill Sans;
+    font-size:12px;
+}
+div.add-item{
+    margin-top:6px;
+}
